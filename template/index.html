@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Recomendação de Xícara</title>
+</head>
+<body>
+    <h1>Escolha as Características do Café</h1>
+    <label for="tipo_cafe">Tipo de Café:</label>
+    <input type="text" id="tipo_cafe" name="tipo_cafe">
+    <br>
+    <label for="acidez">Acidez:</label>
+    <input type="text" id="acidez" name="acidez">
+    <br>
+    <label for="corpo">Corpo:</label>
+    <input type="text" id="corpo" name="corpo">
+    <br>
+    <label for="docura">Doçura:</label>
+    <input type="text" id="docura" name="docura">
+    <br>
+    <button onclick="recomendarXicara()">Recomendar Xícara</button>
+    <h2 id="resultado"></h2>
+    
+    <script>
+        async function recomendarXicara() {
+            const tipo_cafe = document.getElementById('tipo_cafe').value;
+            const acidez = document.getElementById('acidez').value;
+            const corpo = document.getElementById('corpo').value;
+            const docura = document.getElementById('docura').value;
+
+            const resposta = await fetch('http://localhost:8001/enviar-dados', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'},
+                body: JSON.stringify({ tipo_cafe, acidez, corpo, doçura: docura })
+            });
+
+            const dados = await resposta.json();
+            document.getElementById('resultado').innerText = "Resposta: " + dados.mensagem;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+requests
+bardapi
+fastapi
+pydantic
+os
+uvicorn
