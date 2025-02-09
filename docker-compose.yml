@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  main:
+    build:
+      context: agentes/agente2/
+    container_name: main
+    ports:
+      - "8000:8000"
+    networks:
+      - cafe_network
+
+  client:
+    build: 
+      context: agentes/agente1/
+    container_name: client
+    ports:
+      - "8001:8001"
+    depends_on:
+      - main
+    networks:
+      - cafe_network
+
+networks:
+  cafe_network:
+    driver: bridge

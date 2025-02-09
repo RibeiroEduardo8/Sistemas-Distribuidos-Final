@@ -1,24 +1,29 @@
-# Usa a imagem oficial do Ollama com suporte a modelos de IA
-FROM ollama/ollama:latest
+# Usa a imagem oficial do Python como base
+FROM python:3.9-slim
 
-# Instala dependências do Python
-RUN apt-get update && apt-get install -y python3 python3-pip
+# Instala as dependências do sistema necessárias, incluindo bash e curl
+RUN apt-get update && \
+    apt-get install -y curl bash && \
+    apt-get clean
+
+# Baixa e instala o Ollama (agora via script oficial)
+RUN curl -fsSL https://ollama.com/install.sh | sh
 
 # Define o diretório de trabalho
 WORKDIR /app
 
 # Copia os arquivos do projeto para o container
-COPY main.py .
+COPY main.py . 
 COPY requirements.txt .
 
 # Instala as dependências do Python
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-# Faz o pull do modelo phi3:mini
-RUN ollama pull phi3:mini
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expõe a porta da API
 EXPOSE 8000
 
-# Comando para rodar o servidor
-CMD ["python3", "main.py"]
+# Inicia o Ollama e o servidor Python
+CMD nohup ollama serve & \
+    sleep 10 && \
+    ollama pull phi3:mini && \
+    python main.py

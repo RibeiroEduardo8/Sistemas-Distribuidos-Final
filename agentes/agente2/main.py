@@ -21,14 +21,14 @@ caracteristicas = [
 @app.post("/recomendar-xicara")
 def recomendar_xicara(cafe: CafeInput):
     entrada = f"acidez {cafe.acidez}, corpo {cafe.corpo}, doçura {cafe.doçura}"
-    
+
     resposta = ollama.chat(
-    model="phi3:mini",
-    messages=[
-        {"role": "user", "content": f'Com base nas características: {entrada}, e na seguinte base de dados: {caracteristicas}, qual é a cor de xícara mais adequada? Responda apenas com a cor.'}
-    ]
+        model="phi3:mini",
+        messages=[
+            {"role": "user", "content": f'Com base nas características: {entrada}, e na seguinte base de dados: {caracteristicas}, qual é a cor de xícara mais adequada? Responda apenas com a cor.'}
+        ]
     )
-    
+
     return {"cor_recomendada": resposta["message"]["content"].strip()}
 
 if __name__ == "__main__":
