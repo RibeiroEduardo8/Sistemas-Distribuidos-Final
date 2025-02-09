@@ -9,7 +9,7 @@
 <body>
     <h1>Escolha as Características do Café</h1>
     <label for="tipo_cafe">Tipo de Café:</label>
-    <input type="text" id="tipo_cafe" name="tipo_cafe">
+    <input type="text" id="tipo_de_cafe" name="tipo_de_cafe">
     <br>
     <label for="acidez">Acidez:</label>
     <input type="text" id="acidez" name="acidez">
@@ -25,7 +25,7 @@
     
     <script>
         async function recomendarXicara() {
-            const tipo_cafe = document.getElementById('tipo_cafe').value;
+            const tipo_de_cafe = document.getElementById('tipo_de_cafe').value;
             const acidez = document.getElementById('acidez').value;
             const corpo = document.getElementById('corpo').value;
             const docura = document.getElementById('docura').value;
@@ -35,7 +35,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'},
-                body: JSON.stringify({ tipo_cafe, acidez, corpo, doçura: docura })
+                body: JSON.stringify({ tipo_de_cafe, acidez, corpo, doçura: docura })
             });
 
             const dados = await resposta.json();

@@ -20,7 +20,7 @@ app.add_middleware(
 )
 
 class CafeCaracteristicas(BaseModel):
-    tipo_cafe: str
+    tipo_de_cafe: str
     acidez: str
     corpo: str
     doçura: str
@@ -30,6 +30,7 @@ def processar_recomendacao(cafe: CafeCaracteristicas):
     try:
         # Chama o serviço do main.py via Docker (usa "main" no lugar de localhost)
         resposta = requests.post("http://main:8000/recomendar-xicara", json={
+            "tipo_de_cafe": cafe.tipo_de_cafe,
             "acidez": cafe.acidez,
             "corpo": cafe.corpo,
             "doçura": cafe.doçura
