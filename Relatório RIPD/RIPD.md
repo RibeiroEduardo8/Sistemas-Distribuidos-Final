@@ -66,7 +66,7 @@ A metodologia de Torr (2005) sugere a avaliação de riscos com base em três di
 
 ### **5. Conclusão**
 
-O sistema de recomendação de café, embora simples, lida com dados pessoais (preferências do usuário) que podem ser sensíveis. A análise de riscos utilizando a metodologia STRIDE e a abordagem de Torr (2005) permitiu identificar ameaças potenciais e propor medidas de mitigação adequadas. A implementação dessas medidas garantirá a proteção dos dados dos usuários e a integridade do sistema, alinhando-se às boas práticas de segurança da informação e à legislação de proteção de dados, como a LGPD (Lei Geral de Proteção de Dados) no Brasil.
+O sistema de recomendação de cores com base nas caracteristcas do café, embora simples, lida com dados pessoais (preferências do usuário) que podem ser sensíveis. A análise de riscos utilizando a metodologia STRIDE e a abordagem de Torr (2005) permitiu identificar ameaças potenciais e propor medidas de mitigação adequadas. A implementação dessas medidas garantirá a proteção dos dados dos usuários e a integridade do sistema, alinhando-se às boas práticas de segurança da informação e à legislação de proteção de dados, como a LGPD (Lei Geral de Proteção de Dados) no Brasil.
 
 ---
 
