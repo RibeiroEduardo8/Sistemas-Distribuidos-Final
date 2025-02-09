@@ -13,7 +13,7 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
 
 1. Clone este repositório:
    ```sh
-   git clone https://github.com/seu-usuario/Sistemas-Distribuidos-Final.git
+   git clone https://github.com/RibeiroEduardo8/Sistemas-Distribuidos-Final.git
    cd Sistemas-Distribuidos-Final
    ```
 
