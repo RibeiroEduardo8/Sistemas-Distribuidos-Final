@@ -49,6 +49,7 @@ Sistemas-Distribuidos-Final/
 │── agentes/
 │   ├── agente1/
 │   ├── agente2/
+│── Relatório RIPD/
 │── template/
 │   ├── index.html
 │   ├── style.css
