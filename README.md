@@ -4,10 +4,12 @@ Este repositório contém um projeto de Sistemas Distribuídos utilizando Docker
 
 ## Requisitos
 
-Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
+Antes de iniciar, certifique-se de ter os seguintes softwares instalados e configurados:
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+
+Além disso, é necessário que o Docker esteja instalado e **iniciado** no seu sistema.
 
 ## Instalação e Execução
 
@@ -19,14 +21,23 @@ Antes de iniciar, certifique-se de ter os seguintes softwares instalados:
 
 2. Construa e inicie os containers com Docker Compose:
    ```sh
-   docker-compose up --build
+   docker-compose build
+   docker-compose up
    ```
+
+   Aguarde até que os dois servidores iniciem completamente. Dependendo da sua conexão com a internet, esse processo pode demorar um pouco.
 
 3. O sistema iniciará dois serviços principais:
    - **Agente Principal** rodando em `http://localhost:8000`
    - **Cliente** rodando em `http://localhost:8001`
 
-4. Para encerrar os containers, pressione `CTRL+C` ou rode:
+4. Para interagir com o sistema:
+   - Se estiver usando o **VS Code**, você pode executar o arquivo HTML (`template/index.html`) usando o **Live Server** ou **Live Share**.
+   - Caso contrário, basta abrir o arquivo `template/index.html` diretamente no seu navegador.
+
+5. Insira as informações necessárias na interface web e aguarde cerca de **2 minutos** para o programa processar a resposta.
+
+6. Para encerrar os containers, pressione `CTRL+C` no terminal onde o Docker Compose está rodando ou execute o seguinte comando:
    ```sh
    docker-compose down
    ```
@@ -48,3 +59,8 @@ Sistemas-Distribuidos-Final/
 - **template/**: Contém os arquivos da interface web.
 - **docker-compose.yml**: Arquivo de configuração para orquestração dos containers.
 
+## Observações
+
+- Certifique-se de que o Docker esteja em execução antes de iniciar o projeto.
+- O tempo de processamento pode variar dependendo da complexidade das informações inseridas e da capacidade do seu sistema.
+- Em caso de problemas, verifique os logs dos containers para mais detalhes.
