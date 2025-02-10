@@ -58,6 +58,7 @@ Sistemas-Distribuidos-Final/
 
 - **agentes/**: Contém os códigos dos agentes distribuídos.
 - **template/**: Contém os arquivos da interface web.
+- **Relatório RIPD/**: Contém o relatório RIPD, abordando: Identificação e avaliação dos riscos e identificação de medidas para tratar os riscos.
 - **docker-compose.yml**: Arquivo de configuração para orquestração dos containers.
 
 ## Observações
